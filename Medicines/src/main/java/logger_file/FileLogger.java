@@ -15,15 +15,16 @@ public class FileLogger {
 
     public void bufferedWriteInFile(List<Medicine> medicine) {
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(NAME_FILE, false))) {
+
             for (int i = 0; i < medicine.size(); i++) {
                 medicine.sort(Comparator.comparingDouble(Medicine::getPrice));
-                if (!medicine.get(i).isAvailability()) {
+                if (!medicine.get(i).isAvailability())
                     bufferedWriter.write(medicine.get(i) + "\n");
-                }
             }
 
             bufferedWriter.newLine();
             bufferedWriter.newLine();
+
         } catch (IOException e) {
             logger.log(Level.WARNING, e.getMessage(), e);
         }
@@ -31,7 +32,7 @@ public class FileLogger {
 
     public void bufferedReadFile() {
         String value;
-        List<Medicine> list = new ArrayList<>();
+
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(NAME_FILE))) {
             while ((value = bufferedReader.readLine()) != null) {
                 System.out.println(value);
