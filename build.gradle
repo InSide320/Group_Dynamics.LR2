@@ -9,6 +9,18 @@ repositories {
     mavenCentral()
 }
 
+subprojects {
+    sourceCompatibility = 17
+    compileJava{
+        doFirst {
+            options.compilerArgs += [
+                    '--module-path', classpath.asPath
+            ]
+            classpath = files()
+        }
+    }
+}
+
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
