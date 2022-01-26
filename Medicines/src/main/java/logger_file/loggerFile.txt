@@ -1,0 +1,5 @@
+Medicine{name='Ugol', price=10.1, availability=false}
+Medicine{name='tovar', price=15.25, availability=false}
+Medicine{name='Amizon', price=50.1, availability=false}
+
+

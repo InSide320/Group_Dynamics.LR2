@@ -1,0 +1,3 @@
+rootProject.name = 'LR#2'
+include 'Medicines'
+

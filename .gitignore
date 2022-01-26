@@ -1,0 +1,4 @@
+# Project exclude paths
+/.gradle/
+/Medicines/build/
+/Medicines/build/classes/java/main/
